@@ -8,7 +8,7 @@ const cheerio = require("cheerio");
 const pretty = require("pretty");
 
 const hostname = 'lapusheen.chat';
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 app.get("/search", async (req, response) => {
@@ -22,7 +22,7 @@ app.get("/search", async (req, response) => {
     // response.status(200).send("<html style=\" background: black; \">ok</html>");
 });
 
-var listener = app.listen(4200, function () {
+var listener = app.listen(port, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
